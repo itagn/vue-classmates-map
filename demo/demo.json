@@ -4,55 +4,64 @@
       "username": "张三",
       "sex": "男",
       "city": "上海",
-      "geo": [121.4648,31.2891]
+      "geo": [121.4648,31.2891],
+      "avator": "image://http://p0.so.qhimgs1.com/bdr/_240_/t018f66b86762468060.jpg"
     },
     {
       "username": "李四",
       "sex": "女",
       "city": "厦门",
-      "geo": [118.1689,24.6478]
+      "geo": [118.1689,24.6478],
+      "avator": "image://http://p0.so.qhimgs1.com/bdr/_240_/t01d2ee14460d31fe8a.jpg"
     },
     {
       "username": "王二",
       "sex": "女",
       "city": "上海",
-      "geo": [121.4648,31.2891]
+      "geo": [121.4648,31.2891],
+      "avator": "image://http://p5.so.qhimgs1.com/bdr/_240_/t018c5ce01354304c6b.jpg"
     },
     {
       "username": "麻子",
       "sex": "女",
       "city": "长沙",
-      "geo": [113,28.21]
+      "geo": [113,28.21],
+      "avator": "image://http://p0.so.qhimgs1.com/bdr/_240_/t01b6eff8528d303950.jpg"
     },
     {
       "username": "小东",
       "sex": "女",
       "city": "武汉",
-      "geo": [114.31,30.52]
+      "geo": [114.31,30.52],
+      "avator": "image://http://p4.so.qhmsg.com/bdr/_240_/t0100e354491fb8fc39.jpg"
     },
     {
       "username": "小南",
       "sex": "女",
       "city": "合肥",
-      "geo": [117.27,31.86]
+      "geo": [117.27,31.86],
+      "avator": "image://http://p0.so.qhimgs1.com/bdr/_240_/t01efaa0f578ecb812c.jpg"
     },
     {
       "username": "小西",
       "sex": "女",
       "city": "郑州",
-      "geo": [113.65,34.76]
+      "geo": [113.65,34.76],
+      "avator": "image://http://p0.so.qhimgs1.com/bdr/_240_/t018f271ce9aa969fb0.jpg"
     },
     {
       "username": "小北",
       "sex": "女",
       "city": "乌鲁木齐",
-      "geo": [87.68,43.77]
+      "geo": [87.68,43.77],
+      "avator": "image://http://p3.so.qhimgs1.com/bdr/_240_/t01df842a75c588b2a3.jpg"
     },
     {
       "username": "小中",
       "sex": "女",
       "city": "杭州",
-      "geo": [120.19,30.26]
+      "geo": [120.19,30.26],
+      "avator": "image://http://p2.so.qhmsg.com/bdr/_240_/t0137c1aece291e34b7.jpg"
     }
   ]
 }

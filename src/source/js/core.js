@@ -32,6 +32,7 @@ export default {
       const { data } = this.pData
       if (data.length) {
         const pData = []
+        const avators = []
         data.forEach(val => {
           const keys = [...new Set(pData.map(val => val.name))]
           if (!keys.includes(val.city)) {
@@ -39,6 +40,7 @@ export default {
               name: val.city,
               value: [...val.geo, [val.username]]
             })
+            avators.push(val.avator)
           } else {
             pData.forEach(v => {
               if (v.name === val.city) {
@@ -46,6 +48,30 @@ export default {
               }
             })
           }
+        })
+        const series = []
+        const width = document.body.clientWidth
+        pData.forEach((val, i) => {
+          const obj = {
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            data: [val],
+            symbolSize: 12,
+            symbol: avators[i],
+            symbolSize: `${width / 50}`,
+            label: {
+              emphasis: {
+                show: false
+              }
+            },
+            itemStyle: {
+              emphasis: {
+                borderColor: '#fff',
+                borderWidth: 1
+              }
+            }
+          }
+          series.push(obj)
         })
         const option = {
           backgroundColor: '#404a59',
@@ -75,62 +101,7 @@ export default {
               }
             }
           },
-          series: [
-            {
-              type: 'scatter',
-              coordinateSystem: 'geo',
-              data: pData,
-              symbolSize: 12,
-              label: {
-                normal: {
-                  formatter: '{a|{a}}{abg|}\n{hr|}\n  {b|{b}：}{c}  {per|{d}%}  ',
-                    backgroundColor: '#eee',
-                    borderColor: '#aaa',
-                    borderWidth: 1,
-                    borderRadius: 4,
-                    rich: {
-                        a: {
-                            color: '#999',
-                            lineHeight: 22,
-                            align: 'center'
-                        },
-                        abg: {
-                            backgroundColor: '#333',
-                            width: '100%',
-                            align: 'right',
-                            height: 22,
-                            borderRadius: [4, 4, 0, 0]
-                        },
-                        hr: {
-                            borderColor: '#aaa',
-                            width: '100%',
-                            borderWidth: 0.5,
-                            height: 0
-                        },
-                        b: {
-                            fontSize: 16,
-                            lineHeight: 33
-                        },
-                        per: {
-                            color: '#eee',
-                            backgroundColor: '#334455',
-                            padding: [2, 4],
-                            borderRadius: 2
-                        }
-                    }
-                },
-                emphasis: {
-                  show: false
-                }
-              },
-              itemStyle: {
-                emphasis: {
-                  borderColor: '#fff',
-                  borderWidth: 1
-                }
-              }
-            }
-          ]
+          series
         }
         chart.setOption(option)
       } else {

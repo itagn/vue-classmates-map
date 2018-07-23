@@ -1,11 +1,11 @@
 <template>
-  <div class="classmates-map">
-    <div class="map"></div>
+  <div>
+    <div class="classmates-map"></div>
   </div>
 </template>
 <script src="./source/js/core.js"></script>
 <style scoped>
-.classmates-map, .map{
+.classmates-map{
   height: 100%;
 }
 </style>

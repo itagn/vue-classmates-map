@@ -31,23 +31,36 @@ export default {
     initChart (chart) {
       const { data } = this.pData
       if (data.length) {
+        const settings = [
+          {
+            len: 3,
+            img: 40
+          },
+          {
+            len: 7,
+            img: 70
+          }
+        ]
+        const WIDTH = document.body.clientWidth || document.documentElement.clientWidth
+        const setting = WIDTH < 1000 ? settings[0] : settings[1]
         const pData = []
         const avators = []
         data.forEach(val => {
-          const keys = [...new Set(pData.map(val => val.name))]
-          if (!keys.includes(val.city)) {
-            pData.push({
-              name: val.city,
-              value: [...val.geo, [val.username]]
-            })
-            avators.push(val.avator)
-          } else {
-            pData.forEach(v => {
-              if (v.name === val.city) {
-                v.value = [v.value[0], v.value[1], [...v.value[2], val.username]]
-              }
-            })
-          }
+          const keys = pData.map(val => val.name)
+          const value = []
+          let k = 0
+          val.peoples.forEach((val, i) => {
+            value.push(val)
+            if ((k+1) % setting.len === 0) {
+              value.push('<br />')
+            }
+            k++
+          })
+          pData.push({
+            name: val.city,
+            value: [...val.geo, value]
+          })
+          avators.push(val.avator)
         })
         const series = []
         const width = document.body.clientWidth
@@ -58,7 +71,7 @@ export default {
             data: [val],
             symbolSize: 12,
             symbol: avators[i],
-            symbolSize: `${width / 50}`,
+            symbolSize: `${width / setting.img}`,
             label: {
               emphasis: {
                 show: false
@@ -78,7 +91,7 @@ export default {
           tooltip : {
             trigger: 'item',
             formatter (params) {
-              return params.name + ' : ' + params.value[2]
+              return params.name + '： <br /> ' + params.value[2]
             },
             textStyle: {
               textBorderColor: '#fff'

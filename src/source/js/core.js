@@ -60,7 +60,7 @@ export default {
             name: val.city,
             value: [...val.geo, value]
           })
-          avators.push(val.avator)
+          avators.push('image://https://raw.githubusercontent.com/itagn/others/master/map/img/地址.png')
         })
         const series = []
         const width = document.body.clientWidth
@@ -87,7 +87,7 @@ export default {
           series.push(obj)
         })
         const option = {
-          backgroundColor: '#404a59',
+          backgroundColor: '#ddd',
           tooltip : {
             trigger: 'item',
             formatter (params) {
